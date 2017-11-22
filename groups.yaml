@@ -1,0 +1,161 @@
+# Views
+  default_view:
+    icon: mdi:security-home
+    name: 'Home'
+    view: yes
+    entities:
+      - sensor.motion_summary_multisensor
+      - sensor.status_smoke_co_alarm_main
+      - sensor.status_smoke_co_alarm_up
+      - sensor.battery_level_multisensor
+      - sensor.battery_level_smoke_co_alarm_main
+      - sensor.battery_level_smoke_co_alarm_up
+      - camera.uvc1
+  devices:
+    icon: mdi:nintendo-switch
+    name: 'Devices'
+    view: yes
+    entities:
+      - group.cui_living_room
+      - group.cui_dining_room
+      - group.cui_basement
+      - group.cui_kitchen
+      - group.cui_hallway
+      - group.cui_alices_bedroom
+      - group.cui_outside
+      - group.doors
+  media:
+    icon: mdi:play-pause
+    name: 'Media'
+    view: yes
+    entities:
+      - input_select.harmony
+      - media_player.spotify
+      - media_player.kitchen
+      - media_player.alices_bedroom
+      - media_player.back_yard
+      - media_player.apple_tv
+      - media_player.denon
+      - media_player.samsung_led55_un55f8000
+  climate:
+    icon: mdi:weather-partlycloudy
+    name: 'Outside'
+    view: yes
+    entities:
+      - group.daily_forecast
+      - group.weather_overview
+      - group.cui_tracker_card
+      - group.commute_card
+      - group.mail_card
+  misc:
+    icon: mdi:source-branch
+    name: 'Misc'
+    view: yes
+    entities:
+      - group.all_automations
+      - group.all_covers
+      - group.all_devices
+      - group.all_scripts
+      - group.all_remotes
+      - group.all_switches
+      - group.all_lights
+      - input_boolean.sonos_tts
+##############
+# Groups
+  daily_forecast:
+    name: 'Daily Forecast'
+    entities:
+      - sensor.pws_weather_1d
+  weather_overview:
+    name: 'Weather Overview'
+    entities:
+      - sensor.pws_alerts
+      - sensor.pws_temp_f
+      - sun.sun
+  mail_card:
+    name: 'Mail'
+    entities:
+      - sensor.ups
+      - sensor.fedex
+      #- sensor.usps
+      #- camera.usps_mail
+  commute_card:
+    name: 'Commute'
+    entities:
+      - sensor.tom_to_work
+      - sensor.sam_to_work
+      - sensor.tom_to_home
+  cui_tracker_card:
+    name: 'Trackers'
+    entities:
+      - device_tracker.2005_nissan_pathfinder
+      - device_tracker.thomas_iphone
+      - device_tracker.samantha_iphone
+      - device_tracker.stella_iphone
+      - device_tracker.thomas_jr_iphone
+##############
+# Rooms
+  cui_living_room:
+    name: 'Living Room'
+    entities:
+      - switch.aeotec_zw096_smart_switch_6_switch
+      - switch.ge_12722_onoff_relay_switch_switch
+  cui_dining_room:
+    name: 'Dining Room'
+    entities:
+      - light.aeotec_zw111_nano_dimmer_level
+      - climate.dining_room_nest
+  cui_kitchen:
+    name: 'Kitchen'
+    entities:
+      - light.ge_12724_3way_dimmer_switch_level_2
+      - light.ge_12724_3way_dimmer_switch_level_3
+      - light.linear_wd500z1_wall_dimmer_switch_level
+  cui_basement:
+    name: 'Basement'
+    entities:
+      - switch.ge_12722_onoff_relay_switch_switch_2
+  cui_hallway:
+    name: 'Hallway'
+    entities:
+      - light.ge_12724_3way_dimmer_switch_level
+  cui_alices_bedroom:
+    name: "Alice's Bedroom"
+    entities:
+      - switch.aeotec_zw096_smart_switch_6_switch_3
+  cui_outside:
+    name: 'Outside'
+    entities:
+      - switch.aeotec_zw096_smart_switch_6_switch_2
+      - light.ge_12724_3way_dimmer_switch_level_4
+  doors:
+    name: 'Doors'
+    entities:
+      - cover.garage_door_opener
+##############
+# Other Groups
+  nest_card:
+    name: 'Nest'
+    entities:
+      - binary_sensor.dining_room_thermostat_nest_fan
+      - binary_sensor.dining_room_thermostat_nest_has_leaf
+      - binary_sensor.dining_room_thermostat_nest_is_locked
+      - binary_sensor.dining_room_thermostat_nest_is_using_emergency_heat
+      - binary_sensor.dining_room_thermostat_nest_online
+      - climate.dining_room_nest
+      - sensor.dining_room_thermostat_nest_humidity
+      - sensor.dining_room_thermostat_nest_hvac_state
+      - sensor.dining_room_thermostat_nest_operation_mode
+      - sensor.dining_room_thermostat_nest_target
+      - sensor.dining_room_thermostat_nest_temperature
+  batteries:
+    name: 'Battery Levels'
+    entities:
+      - sensor.battery_level_smoke_co_alarm_main
+      - sensor.battery_level_smoke_co_alarm_up
+  rpi_stats:
+    name: 'RPi Stats'
+    entities:
+      - sensor.ram_available
+      - sensor.disk_used_home
+      - sensor.cpu_used

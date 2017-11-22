@@ -1,0 +1,70 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  elevation: 21                       # Impacts weather/sunrise data (abv. sea level in meters)
+  unit_system: imperial               # metric for Metric, imperial for Imperial
+  temperature_unit: F                 # C for Celcius, F for Fahrenheit
+  time_zone: America/New_York         # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  customize: !include deps/customize.yaml               # Customization file
+  customize_glob: !include deps/customize_glob.yaml     # Customize all entities matching a pattern
+###################################################################################################
+#introduction:                        # Show links to resources in log and frontend
+frontend:                             # Enables the frontend
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+    - /local/custom_ui/state-card-custom-alarm.html
+map:                                  # Enables map on frontend
+logbook:                              # Enables events in a logbook on frontend
+history:                              # Enables tracking state changes on frontend
+config:                               # Enables configuration UI on frontend
+conversation:                         # Allows you to issue voice commands from the frontend
+discovery:                            # Discover some devices automatically
+  # ignore:
+  #   - denonavr
+ios:                                  # Enables iOS app configuration
+sun:                                  # Track the sun
+updater:                              # Checks for available updates https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+  include_used_components: true       # Optional, sends HA devs system info to focus on popular components.
+http:                                 # Web frontend configuration
+  api_password: !secret http_password # This adds a password (recommended!)
+  base_url: !secret http_base_url     # This is used w/ SSL/TLS
+  ip_ban_enabled: True                # Indicate if addditional IP filtering is enabled
+  login_attempts_threshold: 3         # Auto-ban after number of failed attempts
+  trusted_networks:                   # List of trusted networks
+    - 192.168.1.0/24
+    - 192.168.5.0/24
+emulated_hue:                         # Allows alexa on/off
+  host_ip: !secret alexa_host
+  listen_port: !secret alexa_port
+  expose_by_default: false
+customizer:
+  custom_ui: local
+  hide_attributes:
+    - node_id
+    - value_index
+###################################################################################################
+zone: !include deps/zones.yaml             # Geolocation zone configuration
+device_tracker: !include deps/tracker.yaml # Device tracker configuration
+sensor: !include deps/sensor.yaml          # Weather prediction configuration
+media_player: !include deps/media.yaml     # Media player configuration
+notify: !include deps/notify.yaml          # Push notifications configuration
+#usps: !include deps/usps.yaml              # USPS Informed Delivery service (broke https://github.com/home-assistant/home-assistant/issues/9143)
+nest: !include deps/nest.yaml              # Nest auto-discovery and configuration
+cover: !include deps/myq.yaml              # Chamberlain MyQ Garage
+zwave:                                     # Enables zwave discovery
+  usb_path: /dev/ttyACM0                   # zwave discovery via this usb device
+mqtt: !include deps/mqtt.yaml              # MQTT configuration
+camera: !include deps/camera.yaml          # Camera configuration
+input_select: !include deps/inputs.yaml    # Input selection card configuration
+input_boolean: !include deps/booleans.yaml
+group: !include groups.yaml                # Group (cards) and View (tabs)
+switch: !include deps/cli_switch.yaml
+script: !include scripts.yaml
+automation: !include automations.yaml
+#weblink: !include deps/weblink.yaml
+tts:                                       # Text to speech
+  - platform: google
+    cache: true
+    cache_dir: tts
+    time_memory: 300
