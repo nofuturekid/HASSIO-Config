@@ -113,7 +113,7 @@
       offset: '-00:10:00'
     action:
       - service: homeassistant.turn_on
-        entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
+        entity_id: light.ge_12724_3way_dimmer_switch_level_5
       - service: homeassistant.turn_on
         data:
           entity_id: light.ge_12724_3way_dimmer_switch_level_4
@@ -128,8 +128,8 @@
       offset: '-00:10:00'
     action:
       service: homeassistant.turn_off
-      entity_id: 
-        - switch.aeotec_zw096_smart_switch_6_switch_2
+      entity_id:
+        - light.ge_12724_3way_dimmer_switch_level_5
         - light.ge_12724_3way_dimmer_switch_level_4
 
   - id: 'heal_zwave'
@@ -225,4 +225,3 @@
             priority: 1
           message: >
             {{ trigger.from_state.attributes.friendly_name }} needs new batteries.
-          

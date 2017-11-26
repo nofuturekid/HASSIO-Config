@@ -60,6 +60,7 @@
       - group.all_switches
       - group.all_lights
       - input_boolean.sonos_tts
+      - group.rpi_stats
 ##############
 # Groups
   daily_forecast:
@@ -93,6 +94,7 @@
       - device_tracker.samantha_iphone
       - device_tracker.stella_iphone
       - device_tracker.thomas_jr_iphone
+      - device_tracker.ruthsiphone
 ##############
 # Rooms
   cui_living_room:
@@ -128,6 +130,7 @@
     entities:
       - switch.aeotec_zw096_smart_switch_6_switch_2
       - light.ge_12724_3way_dimmer_switch_level_4
+      - light.ge_12724_3way_dimmer_switch_level_5
   doors:
     name: 'Doors'
     entities:
