@@ -28,41 +28,30 @@
 
   - platform: template
     sensors:
-      status_smoke_co_alarm_up:
+      status_smoke_co_alarm:
         value_template: >-
-            {%- if is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "13") %}
-                Idle
+            {%- if is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "1") %}
+                Fire-1
+            {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "2") %}
+                CO-1
+            {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "12") %}
+                Test-1
             {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "1") %}
-                Fire
+                Fire-2
             {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "2") %}
-                CO
+                CO-2
             {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type", "12") %}
-                Test
+                Test-2
+            {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "13") %}
+                Idle
             {% else %}
                 Unknown
             {%- endif %}
-        friendly_name: 'Upstairs SD/CO Alarm'
+        friendly_name: 'SD/CO Alarm'
       battery_level_smoke_co_alarm_up:
         value_template: '{{states.zwave.first_alert_zcombo_smoke_and_carbon_monoxide_detector.attributes.battery_level}}'
         friendly_name: 'Upstairs SD/CO Batt'
         unit_of_measurement: '%'
-
-  - platform: template
-    sensors:
-      status_smoke_co_alarm_main:
-        value_template: >-
-            {%- if is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "13") %}
-                Idle
-            {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "1") %}
-                Fire
-            {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "2") %}
-                CO
-            {%- elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2", "12") %}
-                Test
-            {% else %}
-                Unknown
-            {%- endif %}
-        friendly_name: 'Main SD/CO Alarm'
       battery_level_smoke_co_alarm_main:
         value_template: '{{states.zwave.first_alert_zcombo_smoke_and_carbon_monoxide_detector_2.attributes.battery_level}}'
         friendly_name: 'Main SD/CO Batt'
@@ -70,9 +59,19 @@
 
   - platform: template
     sensors:
-      battery_level_multisensor:
-        value_template: '{{states.zwave.aeotec_zw100_multisensor_6.attributes.battery_level}}'
-        friendly_name: 'Motion Battery'
+      status_door_sensor:
+        value_template: >-
+            {%- if is_state("sensor.monoprice_zw15268_recessed_door_alarm_level", "255") %}
+                Gar
+            {%- elif is_state("sensor.monoprice_zw15268_recessed_door_alarm_level", "0") %}
+                Close
+            {% else %}
+                Unknown
+            {%- endif %}
+        friendly_name: 'Door Sensor'
+      battery_level_garage_entry:
+        value_template: '{{states.zwave.monoprice_zw15268_recessed_door.attributes.battery_level}}'
+        friendly_name: 'Garage Entry Battery'
         unit_of_measurement: '%'
 
   - platform: template
@@ -87,6 +86,10 @@
                 Unknown
             {%- endif %}
         friendly_name: 'Motion'
+      battery_level_multisensor:
+        value_template: '{{states.zwave.aeotec_zw100_multisensor_6.attributes.battery_level}}'
+        friendly_name: 'Motion Battery'
+        unit_of_measurement: '%'
 
 #  - platform: synologydsm
 #    host: !secret syno_host

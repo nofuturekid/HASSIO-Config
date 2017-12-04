@@ -1,9 +1,10 @@
+  "*.*":
+    custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
   "switch.aeotec_*":
     icon: mdi:power-socket-us
   "switch.ge_*":
     icon: mdi:lightbulb
   "switch.*":
-    custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
     hide_control: false                                   # Hide toggle controls
     show_last_changed: true                               # Show second line when last changed
     confirm_controls_show_lock: false                     # Lock toggle controls
@@ -13,7 +14,6 @@
       blacklist_states: 0                                 # Turns off badge when state is off
   "light.*":
     icon: mdi:lightbulb
-    custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
     state_card_mode: break-slider                         # Slider on second line, toggle on first line
     stretch_slider: true                                  # Slider takes full width
     hide_control: false                                   # Hide toggle controls
@@ -31,11 +31,10 @@
       blacklist_states: 0                                 # Turns off badge when state is off
   "group.all_*":
     hidden: false
-  "group.cui_*":
-    custom_ui_state_card: state-card-custom-ui
   "device_tracker.*":
-    custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
     show_last_changed: true                               # Show second line when last changed
+  "sensor.battery_*":
+    state_card_mode: badges
 
   device_tracker.thomas_iphone:
     extra_badge:
@@ -45,7 +44,7 @@
       attribute: sensor.samantha_iphone_battery_level     # Gets metadata from entity when no sensor exists
   cover.garage_door_opener:
     friendly_name: "Garage Door"
-    custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
+    #custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
     show_last_changed: true                               # Show second line when last changed
   alarm_control_panel.alarm:
     friendly_name: Security

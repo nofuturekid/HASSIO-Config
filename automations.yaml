@@ -98,11 +98,11 @@
         before: '23:00:00'
     action:
     - service: homeassistant.turn_on
-      entity_id: group.cui_living_room
+      entity_id: group.living_room
     - service: homeassistant.turn_on
       data:
         entity_id: light.linear_wd500z1_wall_dimmer_switch_level
-        brightness: 100
+        brightness: 105
 
   - id: 'sunset_mode'
     alias: 'Sunset Mode'
@@ -112,6 +112,8 @@
       event: sunset
       offset: '-00:10:00'
     action:
+      - service: homeassistant.turn_on
+        entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
       - service: homeassistant.turn_on
         entity_id: light.ge_12724_3way_dimmer_switch_level_5
       - service: homeassistant.turn_on
@@ -127,10 +129,10 @@
       event: sunrise
       offset: '-00:10:00'
     action:
-      service: homeassistant.turn_off
-      entity_id:
-        - light.ge_12724_3way_dimmer_switch_level_5
-        - light.ge_12724_3way_dimmer_switch_level_4
+      - service: homeassistant.turn_off
+        entity_id: light.ge_12724_3way_dimmer_switch_level_5
+      - service: homeassistant.turn_off
+        entity_id: light.ge_12724_3way_dimmer_switch_level_4
 
   - id: 'heal_zwave'
     alias: 'Heal Zwave'
@@ -152,6 +154,15 @@
           where: 'kitchen'
           what: 'Alert, this is a test of the text to speech system!'
           volume: 0.5
+
+  - id: 'christmas_off'
+    alias: 'Christmas Lights Off'
+    trigger:
+      platform: time
+      at: '1:30:00'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
 
   # - id: 'light_watchdog'
   #   alias: 'Lighting Watchdog'
@@ -203,7 +214,7 @@
   #       state: 'on'
   #   action:
   #     - service: light.turn_off
-  #       entity_id: group.cui_dining_room, group.cui_living_room
+  #       entity_id: group.dining_room, group.living_room
   #     - service: scene.turn_on
   #       entity_id: scene.tv_time
 

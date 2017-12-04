@@ -4,25 +4,22 @@
     name: 'Home'
     view: yes
     entities:
+      - sensor.status_door_sensor
+      - sensor.status_smoke_co_alarm
       - sensor.motion_summary_multisensor
-      - sensor.status_smoke_co_alarm_main
-      - sensor.status_smoke_co_alarm_up
-      - sensor.battery_level_multisensor
-      - sensor.battery_level_smoke_co_alarm_main
-      - sensor.battery_level_smoke_co_alarm_up
       - camera.uvc1
   devices:
     icon: mdi:nintendo-switch
     name: 'Devices'
     view: yes
     entities:
-      - group.cui_living_room
-      - group.cui_dining_room
-      - group.cui_basement
-      - group.cui_kitchen
-      - group.cui_hallway
-      - group.cui_alices_bedroom
-      - group.cui_outside
+      - group.living_room
+      - group.dining_room
+      - group.basement
+      - group.kitchen
+      - group.hallway
+      - group.alices_bedroom
+      - group.outside
       - group.doors
   media:
     icon: mdi:play-pause
@@ -44,7 +41,7 @@
     entities:
       - group.daily_forecast
       - group.weather_overview
-      - group.cui_tracker_card
+      - group.tracker_card
       - group.commute_card
       - group.mail_card
   misc:
@@ -61,6 +58,7 @@
       - group.all_lights
       - input_boolean.sonos_tts
       - group.rpi_stats
+      - group.batteries
 ##############
 # Groups
   daily_forecast:
@@ -86,7 +84,7 @@
       - sensor.tom_to_work
       - sensor.sam_to_work
       - sensor.tom_to_home
-  cui_tracker_card:
+  tracker_card:
     name: 'Trackers'
     entities:
       - device_tracker.2005_nissan_pathfinder
@@ -97,35 +95,35 @@
       - device_tracker.ruthsiphone
 ##############
 # Rooms
-  cui_living_room:
+  living_room:
     name: 'Living Room'
     entities:
       - switch.aeotec_zw096_smart_switch_6_switch
       - switch.ge_12722_onoff_relay_switch_switch
-  cui_dining_room:
+  dining_room:
     name: 'Dining Room'
     entities:
       - light.aeotec_zw111_nano_dimmer_level
       - climate.dining_room_nest
-  cui_kitchen:
+  kitchen:
     name: 'Kitchen'
     entities:
       - light.ge_12724_3way_dimmer_switch_level_2
       - light.ge_12724_3way_dimmer_switch_level_3
       - light.linear_wd500z1_wall_dimmer_switch_level
-  cui_basement:
+  basement:
     name: 'Basement'
     entities:
       - switch.ge_12722_onoff_relay_switch_switch_2
-  cui_hallway:
+  hallway:
     name: 'Hallway'
     entities:
       - light.ge_12724_3way_dimmer_switch_level
-  cui_alices_bedroom:
+  alices_bedroom:
     name: "Alice's Bedroom"
     entities:
       - switch.aeotec_zw096_smart_switch_6_switch_3
-  cui_outside:
+  outside:
     name: 'Outside'
     entities:
       - switch.aeotec_zw096_smart_switch_6_switch_2
@@ -156,6 +154,8 @@
     entities:
       - sensor.battery_level_smoke_co_alarm_main
       - sensor.battery_level_smoke_co_alarm_up
+      - sensor.battery_level_garage_entry
+      - sensor.battery_level_multisensor
   rpi_stats:
     name: 'RPi Stats'
     entities:

@@ -17,14 +17,14 @@
   #   sequence:
   #     - service: homeassistant.turn_off
   #       entity_id:
-  #         - group.cui_living_room
-  #         - group.cui_dining_room
-  #         - group.cui_kitchen
-  #         - group.cui_basement
-  #         - group.cui_hallway
-  #         - group.cui_alices_bedroom
+  #         - group.living_room
+  #         - group.dining_room
+  #         - group.kitchen
+  #         - group.basement
+  #         - group.hallway
+  #         - group.alices_bedroom
   #     - service: media_player.turn_off
-  #       entity_id: 
+  #       entity_id:
   #         - media_player.kitchen
   #         - media_player.alices_bedroom
   #         - media_player.back_yard
@@ -61,7 +61,7 @@
           - switch.aeotec_zw096_smart_switch_6_switch_3   # Alice
       - delay: 00:00:05
       - service: media_player.turn_off
-        entity_id: 
+        entity_id:
           - media_player.kitchen
           - media_player.alices_bedroom
           - media_player.back_yard
