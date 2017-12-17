@@ -44,7 +44,6 @@
       attribute: sensor.samantha_iphone_battery_level     # Gets metadata from entity when no sensor exists
   cover.garage_door_opener:
     friendly_name: "Garage Door"
-    #custom_ui_state_card: state-card-custom-ui            # Activate custom_ui feature
     show_last_changed: true                               # Show second line when last changed
   alarm_control_panel.alarm:
     friendly_name: Security

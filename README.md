@@ -22,7 +22,7 @@ This is my [Home Assistant](https://home-assistant.io) configuration.
 ![Switches](www/2.png)
 ![Weather](www/4.png)
 
-##Todo List
+## Todo List
 
 I've moved this entire section to the [issues section](https://github.com/tscibilia/HASSIO-Config/issues) on github.
 

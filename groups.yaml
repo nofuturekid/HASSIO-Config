@@ -21,6 +21,7 @@
       - group.alices_bedroom
       - group.outside
       - group.doors
+      - group.christmas
   media:
     icon: mdi:play-pause
     name: 'Media'
@@ -98,7 +99,6 @@
   living_room:
     name: 'Living Room'
     entities:
-      - switch.aeotec_zw096_smart_switch_6_switch
       - switch.ge_12722_onoff_relay_switch_switch
   dining_room:
     name: 'Dining Room'
@@ -126,13 +126,17 @@
   outside:
     name: 'Outside'
     entities:
-      - switch.aeotec_zw096_smart_switch_6_switch_2
       - light.ge_12724_3way_dimmer_switch_level_4
       - light.ge_12724_3way_dimmer_switch_level_5
   doors:
     name: 'Doors'
     entities:
       - cover.garage_door_opener
+  christmas:
+    name: 'Christmas'
+    entities:
+      - switch.aeotec_zw096_smart_switch_6_switch_2
+      - switch.aeotec_zw096_smart_switch_6_switch
 ##############
 # Other Groups
   nest_card:
@@ -155,6 +159,7 @@
       - sensor.battery_level_smoke_co_alarm_main
       - sensor.battery_level_smoke_co_alarm_up
       - sensor.battery_level_garage_entry
+      - sensor.battery_level_front_entry
       - sensor.battery_level_multisensor
   rpi_stats:
     name: 'RPi Stats'

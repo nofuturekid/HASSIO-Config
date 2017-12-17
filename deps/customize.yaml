@@ -1,9 +1,16 @@
   switch.aeotec_zw096_smart_switch_6_switch:
-    friendly_name: "Floor Lamp"                           # Name as displayed in HomeAssistant
-    emulated_hue_name: "Living Room Floor Lamp"           # Spoken name for emulated Hue bridge
-    emulated_hue_hidden: false                            # Expose to the emulated Hue bridge
+    friendly_name: "Christmas Tree"                        # Name as displayed in HomeAssistant
+    emulated_hue_name: "Christmas Tree"                    # Spoken name for emulated Hue bridge
+    emulated_hue_hidden: false                             # Expose to the emulated Hue bridge
+    icon: mdi:pine-tree
     extra_badge:
       entity_id: sensor.aeotec_zw096_smart_switch_6_power
+  # switch.aeotec_zw096_smart_switch_6_switch:
+  #   friendly_name: "Floor Lamp"                           # Name as displayed in HomeAssistant
+  #   emulated_hue_name: "Living Room Floor Lamp"           # Spoken name for emulated Hue bridge
+  #   emulated_hue_hidden: false                            # Expose to the emulated Hue bridge
+  #   extra_badge:
+  #     entity_id: sensor.aeotec_zw096_smart_switch_6_power
   switch.aeotec_zw096_smart_switch_6_switch_2:
     friendly_name: "Christmas Lights"                     # Name as displayed in HomeAssistant
     emulated_hue_hidden: false                            # Expose to the emulated Hue bridge

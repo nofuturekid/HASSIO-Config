@@ -14,7 +14,8 @@ frontend:                             # Enables the frontend
   extra_html_url:
     - /local/custom_ui/state-card-custom-ui.html
     - /local/custom_ui/state-card-custom-alarm.html
-shopping_list:                        # https://home-assistant.io/components/shopping_list/
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 map:                                  # Enables map on frontend
 logbook:                              # Enables events in a logbook on frontend
 history:                              # Enables tracking state changes on frontend
