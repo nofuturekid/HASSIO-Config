@@ -1,0 +1,273 @@
+climate.dining_room_nest:
+  platform: nest
+  unique_id: DeOdRM7gDqgUNV07dTzOhtmuRYDTLHOY
+media_player.back_yard:
+  platform: sonos
+  unique_id: RINCON_B8E937A27A5601400
+media_player.kitchen:
+  platform: sonos
+  unique_id: RINCON_5CAAFD01FD6001400
+media_player.alices_bedroom:
+  platform: sonos
+  unique_id: RINCON_B8E93780E97401400
+sensor.samantha_iphone_battery_level:
+  platform: ios
+  unique_id: level_samantha_iphone
+sensor.7_battery_state:
+  platform: ios
+  unique_id: state_thomas_iphone
+sensor.7_battery_state_2:
+  platform: ios
+  unique_id: state_thomas _iphone
+sensor.samantha_iphone_battery_state:
+  platform: ios
+  unique_id: state_samantha_iphone
+sensor.home_ipad_battery_level:
+  platform: ios
+  unique_id: level_home_ipad
+sensor.7_battery_level:
+  platform: ios
+  unique_id: level_thomas_iphone
+sensor.thomas_ipad_battery_state:
+  platform: ios
+  unique_id: state_thomas_ipad
+sensor.thomass_ipad_battery_level:
+  platform: ios
+  unique_id: level_thomass_ipad
+sensor.thomass_ipad_battery_state:
+  platform: ios
+  unique_id: state_thomass_ipad
+sensor.7_battery_level_2:
+  platform: ios
+  unique_id: level_thomas _iphone
+sensor.thomas_ipad_battery_level:
+  platform: ios
+  unique_id: level_thomas_ipad
+sensor.home_ipad_battery_state:
+  platform: ios
+  unique_id: state_home_ipad
+switch.aeotec_zw096_smart_switch_6_switch:
+  platform: zwave
+  unique_id: 2-72057594076282880
+sensor.aeotec_zw096_smart_switch_6_energy:
+  platform: zwave
+  unique_id: 2-72057594076495874
+sensor.aeotec_zw096_smart_switch_6_previous_reading:
+  platform: zwave
+  unique_id: 2-72057594076495890
+sensor.aeotec_zw096_smart_switch_6_power:
+  platform: zwave
+  unique_id: 2-72057594076496002
+sensor.aeotec_zw096_smart_switch_6_voltage:
+  platform: zwave
+  unique_id: 2-72057594076496130
+sensor.aeotec_zw096_smart_switch_6_current:
+  platform: zwave
+  unique_id: 2-72057594076496194
+binary_sensor.aeotec_zw100_multisensor_6_sensor:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.aeotec_zw100_multisensor_6_temperature:
+  platform: zwave
+  unique_id: 3-72057594093256722
+sensor.aeotec_zw100_multisensor_6_luminance:
+  platform: zwave
+  unique_id: 3-72057594093256754
+sensor.aeotec_zw100_multisensor_6_relative_humidity:
+  platform: zwave
+  unique_id: 3-72057594093256786
+sensor.aeotec_zw100_multisensor_6_direction:
+  platform: zwave
+  unique_id: 3-72057594093256818
+sensor.aeotec_zw100_multisensor_6_ultraviolet:
+  platform: zwave
+  unique_id: 3-72057594093257138
+sensor.aeotec_zw100_multisensor_6_alarm_type:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.aeotec_zw100_multisensor_6_alarm_level:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.aeotec_zw100_multisensor_6_sourcenodeid:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.aeotec_zw100_multisensor_6_burglar:
+  platform: zwave
+  unique_id: 3-72057594094305441
+switch.ge_12722_onoff_relay_switch_switch:
+  platform: zwave
+  unique_id: 4-72057594109837312
+light.ge_12724_3way_dimmer_switch_level:
+  platform: zwave
+  unique_id: 6-72057594143408129
+light.ge_12724_3way_dimmer_switch_level_2:
+  platform: zwave
+  unique_id: 7-72057594160185345
+light.ge_12724_3way_dimmer_switch_level_3:
+  platform: zwave
+  unique_id: 8-72057594176962561
+switch.ge_12722_onoff_relay_switch_switch_2:
+  platform: zwave
+  unique_id: 9-72057594193723392
+light.linear_wd500z1_wall_dimmer_switch_level:
+  platform: zwave
+  unique_id: 10-72057594210516993
+switch.aeotec_zw096_smart_switch_6_switch_2:
+  platform: zwave
+  unique_id: 12-72057594244055040
+sensor.aeotec_zw096_smart_switch_6_energy_2:
+  platform: zwave
+  unique_id: 12-72057594244268034
+sensor.aeotec_zw096_smart_switch_6_previous_reading_2:
+  platform: zwave
+  unique_id: 12-72057594244268050
+sensor.aeotec_zw096_smart_switch_6_power_2:
+  platform: zwave
+  unique_id: 12-72057594244268162
+sensor.aeotec_zw096_smart_switch_6_voltage_2:
+  platform: zwave
+  unique_id: 12-72057594244268290
+sensor.aeotec_zw096_smart_switch_6_current_2:
+  platform: zwave
+  unique_id: 12-72057594244268354
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type:
+  platform: zwave
+  unique_id: 14-72057594278854657
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_level:
+  platform: zwave
+  unique_id: 14-72057594278854673
+switch.aeotec_zw096_smart_switch_6_switch_3:
+  platform: zwave
+  unique_id: 15-72057594294386688
+sensor.aeotec_zw096_smart_switch_6_energy_3:
+  platform: zwave
+  unique_id: 15-72057594294599682
+sensor.aeotec_zw096_smart_switch_6_previous_reading_3:
+  platform: zwave
+  unique_id: 15-72057594294599698
+sensor.aeotec_zw096_smart_switch_6_power_3:
+  platform: zwave
+  unique_id: 15-72057594294599810
+sensor.aeotec_zw096_smart_switch_6_voltage_3:
+  platform: zwave
+  unique_id: 15-72057594294599938
+sensor.aeotec_zw096_smart_switch_6_current_3:
+  platform: zwave
+  unique_id: 15-72057594294600002
+light.ge_12724_3way_dimmer_switch_level_4:
+  platform: zwave
+  unique_id: 16-72057594311180289
+switch.aeotec_zw111_nano_dimmer_switch:
+  platform: zwave
+  unique_id: 18-72057594344718336
+light.aeotec_zw111_nano_dimmer_level:
+  platform: zwave
+  unique_id: 18-72057594344734721
+sensor.aeotec_zw111_nano_dimmer_energy:
+  platform: zwave
+  unique_id: 18-72057594344931330
+sensor.aeotec_zw111_nano_dimmer_previous_reading:
+  platform: zwave
+  unique_id: 18-72057594344931346
+sensor.aeotec_zw111_nano_dimmer_interval:
+  platform: zwave
+  unique_id: 18-72057594344931363
+sensor.aeotec_zw111_nano_dimmer_power:
+  platform: zwave
+  unique_id: 18-72057594344931458
+sensor.aeotec_zw111_nano_dimmer_voltage:
+  platform: zwave
+  unique_id: 18-72057594344931586
+sensor.aeotec_zw111_nano_dimmer_current:
+  platform: zwave
+  unique_id: 18-72057594344931650
+sensor.aeotec_zw111_nano_dimmer_exporting:
+  platform: zwave
+  unique_id: 18-72057594344931840
+sensor.aeotec_zw111_nano_dimmer_alarm_type:
+  platform: zwave
+  unique_id: 18-72057594345963521
+sensor.aeotec_zw111_nano_dimmer_alarm_level:
+  platform: zwave
+  unique_id: 18-72057594345963537
+sensor.aeotec_zw111_nano_dimmer_sourcenodeid:
+  platform: zwave
+  unique_id: 18-72057594345963553
+sensor.aeotec_zw111_nano_dimmer_heat:
+  platform: zwave
+  unique_id: 18-72057594345963633
+sensor.aeotec_zw111_nano_dimmer_power_management:
+  platform: zwave
+  unique_id: 18-72057594345963697
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_2:
+  platform: zwave
+  unique_id: 20-72057594379517953
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_level_2:
+  platform: zwave
+  unique_id: 20-72057594379517969
+light.ge_12724_3way_dimmer_switch_level_5:
+  platform: zwave
+  unique_id: 21-72057594395066369
+binary_sensor.monoprice_zw15268_recessed_door_sensor:
+  platform: zwave
+  unique_id: 23-72057594428784640
+sensor.monoprice_zw15268_recessed_door_alarm_type:
+  platform: zwave
+  unique_id: 23-72057594429849601
+sensor.monoprice_zw15268_recessed_door_alarm_level:
+  platform: zwave
+  unique_id: 23-72057594429849617
+sensor.monoprice_zw15268_recessed_door_sourcenodeid:
+  platform: zwave
+  unique_id: 23-72057594429849633
+sensor.monoprice_zw15268_recessed_door_access_control:
+  platform: zwave
+  unique_id: 23-72057594429849745
+sensor.monoprice_zw15268_recessed_door_burglar:
+  platform: zwave
+  unique_id: 23-72057594429849761
+sensor.monoprice_zw15268_recessed_door_system:
+  platform: zwave
+  unique_id: 23-72057594429849793
+sensor.monoprice_zw15268_recessed_door_clock:
+  platform: zwave
+  unique_id: 23-72057594429849825
+sensor.monoprice_zw15268_recessed_door_appliance:
+  platform: zwave
+  unique_id: 23-72057594429849841
+binary_sensor.monoprice_zw15268_recessed_door_sensor_2:
+  platform: zwave
+  unique_id: 24-72057594445561856
+sensor.monoprice_zw15268_recessed_door_alarm_type_2:
+  platform: zwave
+  unique_id: 24-72057594446626817
+sensor.monoprice_zw15268_recessed_door_alarm_level_2:
+  platform: zwave
+  unique_id: 24-72057594446626833
+sensor.monoprice_zw15268_recessed_door_sourcenodeid_2:
+  platform: zwave
+  unique_id: 24-72057594446626849
+sensor.monoprice_zw15268_recessed_door_access_control_2:
+  platform: zwave
+  unique_id: 24-72057594446626961
+sensor.monoprice_zw15268_recessed_door_burglar_2:
+  platform: zwave
+  unique_id: 24-72057594446626977
+sensor.monoprice_zw15268_recessed_door_power_management:
+  platform: zwave
+  unique_id: 24-72057594446626993
+sensor.monoprice_zw15268_recessed_door_emergency:
+  platform: zwave
+  unique_id: 24-72057594446627025
+sensor.monoprice_zw15268_recessed_door_appliance_2:
+  platform: zwave
+  unique_id: 24-72057594446627057
+media_player.apple_tv:
+  platform: apple_tv
+  unique_id: 892876ea80851bc5f4cd31f2924d6f3bfee270273f8c3ef01829ef61e8c9dff6
+remote.apple_tv:
+  platform: apple_tv
+  unique_id: 892876ea80851bc5f4cd31f2924d6f3bfee270273f8c3ef01829ef61e8c9dff6
+media_player.u8frqlv0sg6b72onr3nlgjmq:
+  platform: plex
+  unique_id: u8frqlv0sg6b72onr3nlgjmq

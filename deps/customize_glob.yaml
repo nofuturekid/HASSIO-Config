@@ -12,6 +12,18 @@
       attribute: power_consumption                        # Gets metadata from entity when no sensor exists
       unit: W                                             # Sets value to metadata integer
       blacklist_states: 0                                 # Turns off badge when state is off
+  "climate.*":
+    state_card_mode: break-slider                         # Slider on second line, toggle on first line
+    stretch_slider: true                                  # Slider takes full width
+    hide_control: false                                   # Hide toggle controls
+    show_last_changed: true                               # Show second line when last changed
+    confirm_controls_show_lock: false                     # Lock toggle controls
+    slider_theme:
+      min: 0                                              # Min slider value
+      max: 100                                            # Max slider value (255 light, 100 cover)
+      pin: true                                           # Display numeric value when moving the slider
+      off_when_min: true                                  # Turn the light off when value is 0
+      report_when_not_changed: false                      # Report if you changed your mind
   "light.*":
     icon: mdi:lightbulb
     state_card_mode: break-slider                         # Slider on second line, toggle on first line

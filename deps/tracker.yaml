@@ -9,7 +9,7 @@
   - platform: automatic
     client_id: !secret automatic_client
     secret: !secret automatic_secret
-    current_location: true
+    current_location: false
     devices:
         - 2005 Nissan Pathfinder
-
+        - 2018 Mazda CX-5

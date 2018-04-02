@@ -19,6 +19,7 @@ frontend:                             # Enables the frontend
 map:                                  # Enables map on frontend
 logbook:                              # Enables events in a logbook on frontend
 history:                              # Enables tracking state changes on frontend
+cloud: !include deps/cloud.yaml       # Enables connection to HA Cloud services
 config:                               # Enables configuration UI on frontend
 conversation:                         # Allows you to issue voice commands from the frontend
 discovery:                            # Discover some devices automatically
@@ -26,6 +27,7 @@ discovery:                            # Discover some devices automatically
   #   - denonavr
 ios:                                  # Enables iOS app configuration
 sun:                                  # Track the sun
+ffmpeg:                               # Allows components to process video and audio streams
 updater:                              # Checks for available updates https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
   include_used_components: true       # Optional, sends HA devs system info to focus on popular components.
 http:                                 # Web frontend configuration
@@ -48,6 +50,7 @@ customizer:
 ###################################################################################################
 zone: !include deps/zones.yaml             # Geolocation zone configuration
 device_tracker: !include deps/tracker.yaml # Device tracker configuration
+binary_sensor: !include deps/binary.yaml   # Device tracker configuration
 sensor: !include deps/sensor.yaml          # Weather prediction configuration
 media_player: !include deps/media.yaml     # Media player configuration
 notify: !include deps/notify.yaml          # Push notifications configuration
@@ -64,6 +67,11 @@ group: !include groups.yaml                # Group (cards) and View (tabs)
 switch: !include deps/cli_switch.yaml
 script: !include scripts.yaml
 automation: !include automations.yaml
+ring:
+  username: !secret ring_user
+  password: !secret ring_pass
+downloader:
+  download_dir: downloads
 #weblink: !include deps/weblink.yaml
 tts:                                       # Text to speech
   - platform: google

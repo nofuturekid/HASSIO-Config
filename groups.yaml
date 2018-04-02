@@ -7,7 +7,10 @@
       - sensor.status_door_sensor
       - sensor.status_smoke_co_alarm
       - sensor.motion_summary_multisensor
+      - sensor.front_door_latest_ding
+      - sensor.front_door_latest_motion
       - camera.uvc1
+      - camera.front_door
   devices:
     icon: mdi:nintendo-switch
     name: 'Devices'
@@ -42,7 +45,7 @@
     entities:
       - group.daily_forecast
       - group.weather_overview
-      - group.tracker_card
+      - group.all_devices
       - group.commute_card
       - group.mail_card
   misc:
@@ -53,6 +56,7 @@
       - group.all_automations
       - group.all_covers
       - group.all_devices
+      - group.tracked_devices
       - group.all_scripts
       - group.all_remotes
       - group.all_switches
@@ -85,21 +89,13 @@
       - sensor.tom_to_work
       - sensor.sam_to_work
       - sensor.tom_to_home
-  tracker_card:
-    name: 'Trackers'
-    entities:
-      - device_tracker.2005_nissan_pathfinder
-      - device_tracker.thomas_iphone
-      - device_tracker.samantha_iphone
-      - device_tracker.stella_iphone
-      - device_tracker.thomas_jr_iphone
-      - device_tracker.ruthsiphone
 ##############
 # Rooms
   living_room:
     name: 'Living Room'
     entities:
       - switch.ge_12722_onoff_relay_switch_switch
+      - switch.aeotec_zw096_smart_switch_6_switch
   dining_room:
     name: 'Dining Room'
     entities:
@@ -136,7 +132,7 @@
     name: 'Christmas'
     entities:
       - switch.aeotec_zw096_smart_switch_6_switch_2
-      - switch.aeotec_zw096_smart_switch_6_switch
+      # - switch.aeotec_zw096_smart_switch_6_switch
 ##############
 # Other Groups
   nest_card:
@@ -161,9 +157,19 @@
       - sensor.battery_level_garage_entry
       - sensor.battery_level_front_entry
       - sensor.battery_level_multisensor
+      - sensor.ring_front_door_battery
   rpi_stats:
     name: 'RPi Stats'
     entities:
       - sensor.ram_available
       - sensor.disk_used_home
       - sensor.cpu_used
+  tracked_devices:
+    name: 'Trackers'
+    entities:
+      - device_tracker.2018_mazda_cx5
+      - device_tracker.thomas_iphone
+      - device_tracker.samantha_iphone
+      - device_tracker.stella_iphone
+      - device_tracker.thomas_jr_iphone
+      - device_tracker.ruthsiphone

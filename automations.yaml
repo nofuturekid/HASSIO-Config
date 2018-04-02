@@ -5,7 +5,7 @@
         entity_id: camera.uvc1
         to: 'recording'
       - platform: state
-        entity_id: group.all_devices
+        entity_id: group.tracked_devices
         to: 'not_home'
         for: '00:05:00'
     condition:
@@ -13,7 +13,7 @@
         entity_id: camera.uvc1
         state: 'recording'
       - condition: state
-        entity_id: group.all_devices
+        entity_id: group.tracked_devices
         state: 'not_home'
     action:
       service: notify.ios_thomas_iphone
@@ -73,11 +73,13 @@
     alias: 'Away Mode'
     trigger:
       platform: state
-      entity_id: group.all_devices
+      entity_id: group.tracked_devices
       to: 'not_home'
       for:
         minutes: 5
     action:
+    #   - service: homeassistant.turn_off # christmas tree
+    #     entity_id: switch.aeotec_zw096_smart_switch_6_switch
       - service: script.interior_off
 
   - id: 'home_mode'
@@ -87,11 +89,11 @@
         event: sunset
         offset: '-00:10:00'
       - platform: state
-        entity_id: group.all_devices
+        entity_id: group.tracked_devices
         to: 'home'
     condition:
       - condition: state
-        entity_id: group.all_devices
+        entity_id: group.tracked_devices
         state: 'home'
       - condition: time
         after: '16:00:00'
@@ -99,10 +101,10 @@
     action:
     - service: homeassistant.turn_on
       entity_id: group.living_room
-    - service: homeassistant.turn_on
+    - service: homeassistant.turn_on # undercab light
       data:
         entity_id: light.linear_wd500z1_wall_dimmer_switch_level
-        brightness: 105
+        brightness: 80
 
   - id: 'sunset_mode'
     alias: 'Sunset Mode'
@@ -112,11 +114,13 @@
       event: sunset
       offset: '-00:10:00'
     action:
-      - service: homeassistant.turn_on
-        entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
-      - service: homeassistant.turn_on
+      # - service: homeassistant.turn_on  # christmas lights
+      #   entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
+      # - service: homeassistant.turn_on  # christmas tree
+      #   entity_id: switch.aeotec_zw096_smart_switch_6_switch
+      - service: homeassistant.turn_on  # garage door light
         entity_id: light.ge_12724_3way_dimmer_switch_level_5
-      - service: homeassistant.turn_on
+      - service: homeassistant.turn_on  # porch light
         data:
           entity_id: light.ge_12724_3way_dimmer_switch_level_4
           brightness: 200
@@ -129,10 +133,12 @@
       event: sunrise
       offset: '-00:10:00'
     action:
-      - service: homeassistant.turn_off
+      - service: homeassistant.turn_off # garage door light
         entity_id: light.ge_12724_3way_dimmer_switch_level_5
-      - service: homeassistant.turn_off
+      - service: homeassistant.turn_off # porch light
         entity_id: light.ge_12724_3way_dimmer_switch_level_4
+      # - service: homeassistant.turn_on  # christmas tree
+      #   entity_id: switch.aeotec_zw096_smart_switch_6_switch
 
   - id: 'heal_zwave'
     alias: 'Heal Zwave'
@@ -161,8 +167,10 @@
       platform: time
       at: '1:30:00'
     action:
-      - service: homeassistant.turn_off
-        entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
+      # - service: homeassistant.turn_off # christmas lights
+      #   entity_id: switch.aeotec_zw096_smart_switch_6_switch_2
+      # - service: homeassistant.turn_off # christmas tree
+      #   entity_id: switch.aeotec_zw096_smart_switch_6_switch
 
   # - id: 'light_watchdog'
   #   alias: 'Lighting Watchdog'
@@ -172,7 +180,7 @@
   #       to: 'on'
   #       for: '02:00:00'
   #     - platform: state
-  #       entity_id: group.all_devices
+  #       entity_id: group.tracked_devices
   #       to: 'not_home'
   #     - platform: state
   #       entity_id: sensor.motion_summary_multisensor
@@ -182,7 +190,7 @@
   #     condition: and
   #     conditions:
   #     - condition: state
-  #       entity_id: group.all_devices
+  #       entity_id: group.tracked_devices
   #       state: 'not_home'
   #     - condition: state
   #       entity_id: sensor.motion_summary_multisensor
@@ -217,6 +225,21 @@
   #       entity_id: group.dining_room, group.living_room
   #     - service: scene.turn_on
   #       entity_id: scene.tv_time
+
+  - id: 'ring_video_downloader'
+    alias: 'Ring Video Downloader'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.ring_front_door_motion
+        from: 'off'
+        to: 'on'
+    action:
+      - service: downloader.download_file
+        data_template:
+          url: "states.camera.front_door.attributes.video_url"
+          subdir: "downloads"
+          filename: "last.mpg"
+          overwrite: true
 
   - id: 'low_batt_warn'
     alias: 'Low Battery Notification'
